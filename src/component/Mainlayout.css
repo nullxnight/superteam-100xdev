@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: linear-gradient(180deg, #43FF99 0%, #000000 35%);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 0 20px;
+}
+
+.main-title {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 4.5em;
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+.main-content {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: 1.1em;
+    margin: 0;
+    padding-bottom: 40px;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+}
+
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    margin-top: 20px; 
+}
+
+
+.image-container img {
+    width: 150px; 
+    height: auto;
+    border-radius: 10px; 
+}
+
+
+button {
+    border: none;
+    outline: none;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 9px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+.connect-button {
+    background-color: #43FF99;
+    color: black;
+    width: 175px;
+}
+
+.connect-button:hover {
+    background-color: #36CC82;
+    transform: scale(1.05);
+}
+
+
+.learn-more-button {
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+}
+
+.learn-more-button:hover {
+    background-color: #1A1A1A;
+    transform: scale(1.05);
+}

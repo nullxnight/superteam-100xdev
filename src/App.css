@@ -1,0 +1,13 @@
+html, body, #root, .App {
+    height: 100%;
+    margin: 0;
+    color: white;
+    padding: 0;
+}
+
+.App {
+    background: linear-gradient(180deg, #43FF99 0%, #000000 35%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
