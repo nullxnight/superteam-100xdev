@@ -42,7 +42,7 @@ function Home() {
                             type="text"
                             name="searchBox"
                             className="searchBox"
-                            placeholder="Search Address, Txn"
+                            placeholder="Search Address, Txn(DEVNET)"
                             value={address}
                             onChange={(e) => setAddress(e.target.value)}
                         />
