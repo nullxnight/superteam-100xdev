@@ -1,5 +1,5 @@
 import React, { FC, useMemo } from 'react';
-import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+import { ConnectionProvider, useWallet, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { UnsafeBurnerWalletAdapter } from '@solana/wallet-adapter-wallets';
 import {
@@ -7,14 +7,30 @@ import {
     WalletDisconnectButton,
     WalletMultiButton
 } from '@solana/wallet-adapter-react-ui';
-import { clusterApiUrl } from '@solana/web3.js';
+import { LAMPORTS_PER_SOL, clusterApiUrl, Connection, PublicKey } from '@solana/web3.js'; // Updated import
 // import { Airdrop } from './components/Airdrop';
 import '@solana/wallet-adapter-react-ui/styles.css';
-
-
 import './Navbar.css';
+// Removed import { Anchor } from 'react-bootstrap';
 
 function Navbar() {
+
+    const wallet = useWallet();
+    const SOL_HOST = clusterApiUrl("devnet");
+    const connection = new Connection(SOL_HOST); 
+    let lamports = 0;
+    const getBalance = async () => {
+        if(wallet?.publicKey){
+            const solBalance = await connection.getBalance(wallet.publicKey);
+            lamports = solBalance / LAMPORTS_PER_SOL;
+            console.log(`Amount: ${lamports}`);
+        }
+    };
+
+    useMemo(() => {
+        getBalance();
+    }, [wallet]);
+
     return (
         <>
         <nav className="navbar">
