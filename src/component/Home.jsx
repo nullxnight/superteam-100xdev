@@ -17,7 +17,7 @@ function Home() {
             const allocatedDataSize = accountInfo?.data.length || 0;
 
             setOverview({
-                balance: balance / 1e9, // Convert lamports to SOL
+                balance: balance / 1e9,
                 allocatedDataSize,
                 assignedProgramId,
                 executable,
